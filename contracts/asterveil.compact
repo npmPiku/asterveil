@@ -1,0 +1,86 @@
+pragma language_version >= 0.22.0;
+
+import CompactStandardLibrary;
+
+// Asterveil — private allowlist access for small, high-trust circles.
+// Public state describes the gate. Member secrets and clearance values stay private.
+
+export ledger gate_name: Bytes<32>;
+export ledger allowlist_root: Bytes<32>;
+export ledger minimum_clearance: Uint<8>;
+export ledger max_entries: Uint<32>;
+export ledger verified_entries: Uint<32>;
+export ledger nullifiers: Set<Bytes<32>>;
+export ledger badge_registry: Set<Bytes<32>>;
+export ledger admin_public_key: Bytes<32>;
+export ledger is_open: Boolean;
+
+// Hashes are domain-separated so a secret used for one purpose cannot be
+// accidentally reused as a commitment or nullifier for another purpose.
+export pure circuit derive_member_key(member_secret: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>([pad(32, "asterveil:member:v1"), member_secret]);
+}
+
+export pure circuit derive_member_nullifier(member_secret: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>([pad(32, "asterveil:nullifier:v1"), member_secret]);
+}
+
+export pure circuit derive_admin_key(admin_secret: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>([pad(32, "asterveil:admin:v1"), admin_secret]);
+}
+
+constructor(
+    initial_gate_name: Bytes<32>,
+    initial_allowlist_root: Bytes<32>,
+    initial_minimum_clearance: Uint<8>,
+    initial_max_entries: Uint<32>,
+    initial_admin_key: Bytes<32>
+) {
+    gate_name = disclose(initial_gate_name);
+    allowlist_root = disclose(initial_allowlist_root);
+    minimum_clearance = disclose(initial_minimum_clearance);
+    max_entries = disclose(initial_max_entries);
+    admin_public_key = disclose(initial_admin_key);
+    verified_entries = disclose(0);
+    is_open = disclose(true);
+}
+
+// Prove membership without revealing the member secret, identity, or exact
+// clearance. Only a one-way badge commitment and a replay-resistant nullifier
+// are disclosed to the public ledger.
+export circuit prove_access(
+    member_secret: Bytes<32>,
+    member_clearance: Uint<8>,
+    badge_commitment: Bytes<32>
+): [] {
+    assert(disclose(is_open), "This gate is currently closed");
+    assert(disclose(verified_entries) < disclose(max_entries), "Gate capacity reached");
+    assert(derive_member_key(member_secret) == allowlist_root, "Membership secret is not recognized");
+    assert(member_clearance >= minimum_clearance, "Clearance level is too low");
+
+    const nullifier = derive_member_nullifier(member_secret);
+    assert(!nullifiers.member(disclose(nullifier)), "This member has already entered");
+
+    nullifiers.insert(disclose(nullifier));
+    badge_registry.insert(disclose(badge_commitment));
+    verified_entries = disclose((verified_entries + 1) as Uint<32>);
+}
+
+// The administrator can rotate the allowlist commitment and gate policy with
+// a private admin secret. The secret itself never crosses into ledger state.
+export circuit update_gate(
+    admin_secret: Bytes<32>,
+    new_allowlist_root: Bytes<32>,
+    new_minimum_clearance: Uint<8>,
+    new_max_entries: Uint<32>
+): [] {
+    assert(derive_admin_key(admin_secret) == admin_public_key, "Administrator proof is invalid");
+    allowlist_root = disclose(new_allowlist_root);
+    minimum_clearance = disclose(new_minimum_clearance);
+    max_entries = disclose(new_max_entries);
+}
+
+export circuit set_gate_open(admin_secret: Bytes<32>, open_state: Boolean): [] {
+    assert(derive_admin_key(admin_secret) == admin_public_key, "Administrator proof is invalid");
+    is_open = disclose(open_state);
+}
