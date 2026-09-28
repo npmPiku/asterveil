@@ -182,8 +182,9 @@ The application and documentation are prepared for the evidence that requires yo
 - A public repository URL and at least 15 meaningful commits for Level 4.
 - A product X profile URL linked from this README after you create it.
 
-## Deployed Contract
+## Live Demo & Deployment
 
+- **Live Application:** [https://asterveil.netlify.app/](https://asterveil.netlify.app/)
 - **Preprod Network Deployment Transaction:** [8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod)
 
 ## Level 1–4 cross-check
