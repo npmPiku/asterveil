@@ -42,6 +42,9 @@ flowchart LR
 | **Demo Video** | [Watch on Google Drive](https://drive.google.com/file/d/1fWISPbUfX6my66jiv1Z70pycOYO_q12N/view?usp=sharing) |
 | **Deployed Contract** | [212b4852...](https://explorer.1am.xyz/contract/212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f?network=preprod) |
 | **Deployment TX** | [8a1939cd...](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod) |
+| **X (Twitter) Profile** | [@Asterveilmid](https://x.com/Asterveilmid) |
+| **X Post 1** | [View Post](https://x.com/Asterveilmid/status/2104577546352554070?s=20) |
+| **X Post 2** | [View Post](https://x.com/Asterveilmid/status/2104577829006725458?s=20) |
 
 ## Screenshots
 
