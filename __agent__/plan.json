@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "title": "locate the failing index operation",
+      "status": "in-progress"
+    },
+    {
+      "title": "trace input and contract data shape",
+      "status": "pending"
+    },
+    {
+      "title": "apply and verify a targeted fix",
+      "status": "pending"
+    }
+  ],
+  "updated_at": "2026-09-28T13:28:31.761Z",
+  "session_id": "01a0e831-1ea7-70fd-86d5-0cb59a4beb77"
+}

@@ -48,16 +48,11 @@ flowchart LR
 
 ## Screenshots
 
-<details>
-<summary>Click to view screenshots</summary>
-
 ![Screenshot 1](assets/1.png)
 ![Screenshot 2](assets/2.png)
 ![Screenshot 3](assets/3.png)
 ![Screenshot 4](assets/4.png)
 ![CI/CD Screenshot](assets/cicd.png)
-
-</details>
 
 ### The contract
 
