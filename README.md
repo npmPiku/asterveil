@@ -4,8 +4,6 @@ A private allowlist gate for trusted circles, built with Compact and Midnight.
 
 Asterveil lets a member prove that they hold an approved membership secret and meet a minimum clearance level without publishing their secret, exact clearance, or identity. The gate records a pseudonymous badge commitment and a replay-resistant nullifier — enough for a verifier to check access without collecting a dossier.
 
-> **Selected Level 3 idea:** Private Allowlist Access — prove membership without revealing identity.
-
 ## Product idea
 
 Small research circles, private events, and access-controlled communities often need to answer one question: *does this person belong here?* Today that answer usually means collecting names, documents, or reusable credentials. Asterveil replaces that intake step with a single-use zero-knowledge access proof. A member keeps a 32-byte secret, the gate publishes only a commitment and policy, and a verifier receives a durable access receipt without learning who the member is or how much clearance they hold.
@@ -32,6 +30,16 @@ flowchart LR
   Ledger --> Registry[Public registry query]
   Wallet[Lace / 1AM] -->|balance, prove, approve| Proof
 ```
+
+## Submission Links
+
+| Resource | Link |
+| --- | --- |
+| **GitHub Repository** | [npmPiku/asterveil](https://github.com/npmPiku/asterveil) |
+| **Live Application** | [asterveil.netlify.app](https://asterveil.netlify.app/) |
+| **Demo Video** | [Watch on Google Drive](https://drive.google.com/file/d/1fWISPbUfX6my66jiv1Z70pycOYO_q12N/view?usp=sharing) |
+| **Deployed Contract** | [212b4852...](https://explorer.1am.xyz/contract/212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f?network=preprod) |
+| **Deployment TX** | [8a1939cd...](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod) |
 
 ## Screenshots
 
@@ -194,12 +202,7 @@ The application and documentation are prepared for the evidence that requires yo
 - A public repository URL and at least 15 meaningful commits for Level 4.
 - A product X profile URL linked from this README after you create it.
 
-## Live Demo & Deployment
 
-- **Demo Video Walkthrough:** [Watch on Google Drive](https://drive.google.com/file/d/1fWISPbUfX6my66jiv1Z70pycOYO_q12N/view?usp=sharing)
-- **Live Application:** [https://asterveil.netlify.app/](https://asterveil.netlify.app/)
-- **Preprod Network Deployment Transaction:** [8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod)
-- **Deployed Contract Address:** [212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f](https://explorer.1am.xyz/contract/212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f?network=preprod)
 
 ## Level 1–4 cross-check
 
