@@ -187,6 +187,7 @@ The application and documentation are prepared for the evidence that requires yo
 - **Demo Video Walkthrough:** [Watch on Google Drive](https://drive.google.com/file/d/1fWISPbUfX6my66jiv1Z70pycOYO_q12N/view?usp=sharing)
 - **Live Application:** [https://asterveil.netlify.app/](https://asterveil.netlify.app/)
 - **Preprod Network Deployment Transaction:** [8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod)
+- **Deployed Contract Address:** [212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f](https://explorer.1am.xyz/contract/212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f?network=preprod)
 
 ## Level 1–4 cross-check
 
