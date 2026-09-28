@@ -1,8 +1,10 @@
 # Asterveil
 
+[![CI](https://github.com/npmPiku/asterveil/actions/workflows/ci.yaml/badge.svg)](https://github.com/npmPiku/asterveil/actions/workflows/ci.yaml)
 A private allowlist gate for trusted circles, built with Compact and Midnight.
 
 Asterveil lets a member prove that they hold an approved membership secret and meet a minimum clearance level without publishing their secret, exact clearance, or identity. The gate records a pseudonymous badge commitment and a replay-resistant nullifier — enough for a verifier to check access without collecting a dossier.
+
 
 ## Product idea
 
