@@ -33,6 +33,18 @@ flowchart LR
   Wallet[Lace / 1AM] -->|balance, prove, approve| Proof
 ```
 
+## Screenshots
+
+<details>
+<summary>Click to view screenshots</summary>
+
+![Screenshot 1](assets/1.png)
+![Screenshot 2](assets/2.png)
+![Screenshot 3](assets/3.png)
+![Screenshot 4](assets/4.png)
+
+</details>
+
 ### The contract
 
 Source: [`contracts/asterveil.compact`](contracts/asterveil.compact)
@@ -188,18 +200,6 @@ The application and documentation are prepared for the evidence that requires yo
 - **Live Application:** [https://asterveil.netlify.app/](https://asterveil.netlify.app/)
 - **Preprod Network Deployment Transaction:** [8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536](https://explorer.1am.xyz/tx/8a1939cd3b4dd7fbf8a676ae19884d7eb1372d5446695503a36031be460ba536?network=preprod)
 - **Deployed Contract Address:** [212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f](https://explorer.1am.xyz/contract/212b4852304fd522addd1d35fad233e95e318ec8d6e645f4c41d29dfe973d27f?network=preprod)
-
-## Screenshots
-
-<details>
-<summary>Click to view screenshots</summary>
-
-![Screenshot 1](assets/1.png)
-![Screenshot 2](assets/2.png)
-![Screenshot 3](assets/3.png)
-![Screenshot 4](assets/4.png)
-
-</details>
 
 ## Level 1–4 cross-check
 
