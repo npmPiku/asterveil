@@ -52,6 +52,7 @@ flowchart LR
 ![Screenshot 2](assets/2.png)
 ![Screenshot 3](assets/3.png)
 ![Screenshot 4](assets/4.png)
+![CI/CD Screenshot](assets/cicd.png)
 
 </details>
 
